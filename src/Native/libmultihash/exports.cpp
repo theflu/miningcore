@@ -36,6 +36,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include "nist5.h"
 #include "x15.h"
 #include "x17.h"
+#include "sonoa.h"
 #include "fresh.h"
 #include "dcrypt.h"
 #include "jh.h"
@@ -75,6 +76,11 @@ extern "C" MODULE_API void x11_export(const char* input, char* output, uint32_t 
 extern "C" MODULE_API void x17_export(const char* input, char* output, uint32_t input_len)
 {
     x17_hash(input, output, input_len);
+}
+
+extern "C" MODULE_API void sonoa_export(const char* input, char* output, uint32_t input_len)
+{
+    sonoa_hash(input, output, input_len);
 }
 
 extern "C" MODULE_API void x15_export(const char* input, char* output, uint32_t input_len)

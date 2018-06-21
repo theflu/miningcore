@@ -37,6 +37,7 @@ namespace MiningCore.Blockchain.Bitcoin
         private static readonly IHashAlgorithm x11 = new X11();
         private static readonly IHashAlgorithm blake2s = new Blake2s();
         private static readonly IHashAlgorithm x17 = new X17();
+        private static readonly IHashAlgorithm sonoa = new Sonoa();
         private static readonly IHashAlgorithm x16r = new X16R();
         private static readonly IHashAlgorithm x16s = new X16S();
         private static readonly IHashAlgorithm groestl = new Groestl();
@@ -65,6 +66,9 @@ namespace MiningCore.Blockchain.Bitcoin
 
         private static readonly BitcoinCoinProperties x11Coin =
             new BitcoinCoinProperties(1, sha256D, x11, new DigestReverser(x11), "X11");
+			
+		private static readonly BitcoinCoinProperties sonoaCoin =
+            new BitcoinCoinProperties(1, sha256D, sonoa, new DigestReverser(sonoa), "Sonoa");
 
         private static readonly BitcoinCoinProperties skeinCoin =
             new BitcoinCoinProperties(1, sha256D, skein, sha256DReverse, "Skein");
@@ -132,6 +136,9 @@ namespace MiningCore.Blockchain.Bitcoin
             // X11
             { CoinType.DASH, x11Coin },
             { CoinType.CANN, x11Coin },
+			
+			// Sonoa
+            { CoinType.SONO, sonoaCoin },
 
             // Equihash
             { CoinType.ZEC, equihashCoin },
