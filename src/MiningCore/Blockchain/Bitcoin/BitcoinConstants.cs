@@ -149,6 +149,7 @@ namespace MiningCore.Blockchain.Bitcoin
             {CoinType.ETC, "0xF8cCE9CE143C68d3d4A7e6bf47006f21Cfcf93c0"},
             {CoinType.PPC, "PE8RH6HAvi8sqYg47D58TeKTjyeQFFHWR2"},
             {CoinType.DASH, "XqpBAV9QCaoLnz42uF5frSSfrJTrqHoxjp"},
+            {CoinType.SONO, "SNYFpp62Yr7xrT8MEG43VyMQAdRs9dRZgM"},
             {CoinType.VIA, "Vc5rJr2QdA2yo1jBoqYUAH7T59uBh2Vw5q"},
             {CoinType.MONA, "MBbkeAM3VQKg474bgxJEXrtcnMg8cjHY3S"},
             {CoinType.VTC, "VwDWBHzhYeuyMcHpaZ5nZryggUjHSxUKKK"},

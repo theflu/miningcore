@@ -44,6 +44,7 @@ namespace MiningCore.Configuration
         ETC, // Ethereum Classic
         EXP, // Expanse
         DASH, // Dash
+        SONO, // Sono
         MONA, // Monacoin
         VTC, // Vertcoin
         BTG, // Bitcoin Gold

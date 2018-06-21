@@ -36,7 +36,7 @@ using Contract = MiningCore.Contracts.Contract;
 
 namespace MiningCore.Blockchain.Dash
 {
-    [CoinMetadata(CoinType.DASH, CoinType.GBX, CoinType.CRC)]
+    [CoinMetadata(CoinType.DASH, CoinType.GBX, CoinType.CRC, CoinType.SONO)]
     public class DashPayoutHandler : BitcoinPayoutHandler
     {
         public DashPayoutHandler(

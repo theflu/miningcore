@@ -377,6 +377,7 @@ namespace MiningCore
             Console.WriteLine($" BTC  - 17QnVor1B6oK1rWnVVBrdX9gFzVkZZbhDm");
             Console.WriteLine($" LTC  - LTK6CWastkmBzGxgQhTTtCUjkjDA14kxzC");
             Console.WriteLine($" DASH - XqpBAV9QCaoLnz42uF5frSSfrJTrqHoxjp");
+            Console.WriteLine($" SONO - SNYFpp62Yr7xrT8MEG43VyMQAdRs9dRZgM");
             Console.WriteLine($" ZEC  - t1YHZHz2DGVMJiggD2P4fBQ2TAPgtLSUwZ7");
             Console.WriteLine($" ZCL  - t1MFU1vD3YKgsK6Uh8hW7UTY8mKAV2xVqBr");
             Console.WriteLine($" ETH  - 0xcb55abBfe361B12323eb952110cE33d5F28BeeE1");
