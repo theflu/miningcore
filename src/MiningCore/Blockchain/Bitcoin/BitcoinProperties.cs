@@ -68,7 +68,7 @@ namespace MiningCore.Blockchain.Bitcoin
             new BitcoinCoinProperties(1, sha256D, x11, new DigestReverser(x11), "X11");
 			
 		private static readonly BitcoinCoinProperties sonoaCoin =
-            new BitcoinCoinProperties(1, sha256D, sonoa, new DigestReverser(sonoa), "Sonoa");
+            new BitcoinCoinProperties(1, sha256D, sonoa, new DigestReverser(sonoa), "Sonoa", new DigestReverser(sonoa));
 
         private static readonly BitcoinCoinProperties skeinCoin =
             new BitcoinCoinProperties(1, sha256D, skein, sha256DReverse, "Skein");
