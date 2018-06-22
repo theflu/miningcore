@@ -19,6 +19,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace MiningCore.Blockchain.Sono.DaemonResponses
 {
