@@ -33,6 +33,6 @@ namespace MiningCore.Blockchain.Sono.DaemonResponses
 	
     public class SonoDaemonInfo : Bitcoin.DaemonResponses.DaemonInfo
     {
-        public SonoDifficulty Difficulty { get; set; }
+        public new SonoDifficulty Difficulty { get; set; }
     }
 }
