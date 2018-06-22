@@ -21,6 +21,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 using Autofac;
 using AutoMapper;
 using MiningCore.Blockchain.Bitcoin;
+using MiningCore.Blockchain.Sono.DaemonResponses;
 using MiningCore.Configuration;
 using MiningCore.Messaging;
 using MiningCore.Notifications;
@@ -32,9 +33,9 @@ using Newtonsoft.Json;
 namespace MiningCore.Blockchain.Sono
 {
     [CoinMetadata(CoinType.SONO)]
-    public class SonoPool : BitcoinPoolBase<DaemonResponses.SonoDaemonInfo, DaemonResponses.SonoBlockTemplate, DaemonResponses.SonoMiningInfo>
+    public class SonoPool : BitcoinPoolBase<SonoJob, SonoDaemonInfo, SonoBlockTemplate, SonoMiningInfo>
     {
-        public SonoPool(IComponentContext ctx,
+        public StraksPool(IComponentContext ctx,
             JsonSerializerSettings serializerSettings,
             IConnectionFactory cf,
             IStatsRepository statsRepo,
@@ -47,3 +48,4 @@ namespace MiningCore.Blockchain.Sono
         }
     }
 }
+
