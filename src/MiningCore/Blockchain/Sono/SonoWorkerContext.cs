@@ -18,32 +18,15 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-using Autofac;
-using AutoMapper;
-using MiningCore.Blockchain.Sono.DaemonResponses;
-using MiningCore.Configuration;
-using MiningCore.Messaging;
-using MiningCore.Notifications;
-using MiningCore.Persistence;
-using MiningCore.Persistence.Repositories;
-using MiningCore.Time;
-using Newtonsoft.Json;
+using MiningCore.Mining;
 
 namespace MiningCore.Blockchain.Sono
 {
-    [CoinMetadata(CoinType.SONO)]
-    public class SonoPool : SonoPoolBase<SonoJob<BlockTemplate>, BlockTemplate>
+    public class SonoWorkerContext : WorkerContextBase
     {
-        public SonoPool(IComponentContext ctx,
-            JsonSerializerSettings serializerSettings,
-            IConnectionFactory cf,
-            IStatsRepository statsRepo,
-            IMapper mapper,
-            IMasterClock clock,
-            IMessageBus messageBus,
-            NotificationService notificationService) :
-            base(ctx, serializerSettings, cf, statsRepo, mapper, clock, messageBus, notificationService)
-        {
-        }
+        public string MinerName { get; set; }
+        public string WorkerName { get; set; }
+
+        public string ExtraNonce1 { get; set; }
     }
 }

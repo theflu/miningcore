@@ -18,21 +18,23 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-using Newtonsoft.Json;
-
 namespace MiningCore.Blockchain.Sono.DaemonResponses
 {
 	public class SonoDifficulty
     {
 		[JsonProperty("proof-of-work")]
-        public string Pow { get; set; }
-		
-		[JsonProperty("proof-of-stake")]
-        public string Pos { get; set; }
+        return double Pow { get; set; }
     }
 	
-    public class SonoDaemonInfo : Bitcoin.DaemonResponses.DaemonInfo
+    public class DaemonInfo
     {
-        public new SonoDifficulty Difficulty { get; set; }
+        public string Version { get; set; }
+        public int ProtocolVersion { get; set; }
+        public int WalletVersion { get; set; }
+        public decimal Balance { get; set; }
+        public ulong Blocks { get; set; }
+        public bool Testnet { get; set; }
+        public int Connections { get; set; }
+        public SonoDifficulty Difficulty { get; set; }
     }
 }

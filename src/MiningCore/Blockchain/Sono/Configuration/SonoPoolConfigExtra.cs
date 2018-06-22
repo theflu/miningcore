@@ -18,37 +18,26 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-using Newtonsoft.Json;
-using System.Collections.Generic;
+using MiningCore.Configuration;
 
-namespace MiningCore.Blockchain.Sono.DaemonResponses
+namespace MiningCore.Blockchain.Sono.Configuration
 {
-    public class SonoMasternode
+    public class SonoPoolConfigExtra
     {
-        public string Payee { get; set; }
-        public long Amount { get; set; }
-    }
+        /// <summary>
+        /// Maximum number of tracked jobs.
+        /// Default: 12 - you should increase this value if your blockrefreshinterval is higher than 300ms
+        /// </summary>
+        public int? MaxActiveJobs { get; set; }
 
-    public class SonoBlockTemplate : Bitcoin.DaemonResponses.BlockTemplate
-    {
-        public string Payee { get; set; }
+        /// <summary>
+        /// Set to true to limit RPC commands to old Sono command set
+        /// </summary>
+        public bool? HasLegacyDaemon { get; set; }
 
-        [JsonProperty("payee_amount")]
-        public long? PayeeAmount { get; set; }
-
-        public SonoMasternode Masternode { get; set; }
-
-        [JsonProperty("masternode_payments_started")]
-        public bool MasternodePaymentsStarted { get; set; }
-
-        [JsonProperty("masternode_payments_enforced")]
-        public bool MasternodePaymentsEnforced { get; set; }
-
-        [JsonProperty("superblock")]
-        public List<string> Mutable { get; set; }
-		
-		public int SizeLimit { get; set; }
-		
-		public int SigopLimit { get; set; }
+        /// <summary>
+        /// Blocktemplate stream published via ZMQ
+        /// </summary>
+        public ZmqPubSubEndpointConfig BtStream { get; set; }
     }
 }

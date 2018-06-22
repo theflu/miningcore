@@ -18,32 +18,23 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-using Autofac;
-using AutoMapper;
-using MiningCore.Blockchain.Sono.DaemonResponses;
-using MiningCore.Configuration;
-using MiningCore.Messaging;
-using MiningCore.Notifications;
-using MiningCore.Persistence;
-using MiningCore.Persistence.Repositories;
-using MiningCore.Time;
-using Newtonsoft.Json;
-
-namespace MiningCore.Blockchain.Sono
+namespace MiningCore.Blockchain.Sono.Configuration
 {
-    [CoinMetadata(CoinType.SONO)]
-    public class SonoPool : SonoPoolBase<SonoJob<BlockTemplate>, BlockTemplate>
+    public class SonoPoolPaymentProcessingConfigExtra
     {
-        public SonoPool(IComponentContext ctx,
-            JsonSerializerSettings serializerSettings,
-            IConnectionFactory cf,
-            IStatsRepository statsRepo,
-            IMapper mapper,
-            IMasterClock clock,
-            IMessageBus messageBus,
-            NotificationService notificationService) :
-            base(ctx, serializerSettings, cf, statsRepo, mapper, clock, messageBus, notificationService)
-        {
-        }
+        /// <summary>
+        /// Wallet Password if the daemon is running with an encrypted wallet (used for unlocking wallet during payment processing)
+        /// </summary>
+        public string WalletPassword { get; set; }
+
+        /// <summary>
+        /// if True, miners pay payment tx fees
+        /// </summary>
+        public bool MinersPayTxFees { get; set; }
+
+        /// <summary>
+        /// Multiply blockreward by this amount
+        /// </summary>
+        public decimal? BlockrewardMultiplier { get; set; }
     }
 }
