@@ -130,15 +130,6 @@ namespace MiningCore
 
             builder.RegisterType<BitcoinJobManager<DashJob, DashBlockTemplate>>()
                 .AsSelf();
-				
-			builder.RegisterType<BitcoinJobManager<SonoJob, SonoDaemonInfo>>()
-                .AsSelf();
-				
-			builder.RegisterType<BitcoinJobManager<SonoJob, SonoBlockTemplate>>()
-                .AsSelf();
-				
-			builder.RegisterType<BitcoinJobManager<SonoJob, SonoMiningInfo>>()
-                .AsSelf();
 
             builder.RegisterType<BitcoinJobManager<StraksJob, StraksBlockTemplate>>()
                 .AsSelf();
