@@ -23,7 +23,10 @@ namespace MiningCore.Blockchain.Sono.DaemonResponses
 	public class SonoDifficulty
     {
 		[JsonProperty("proof-of-work")]
-        return double Pow { get; set; }
+        public double Pow { get; set; }
+		
+		[JsonProperty("proof-of-stake")]
+        public double Pos { get; set; }
     }
 	
     public class DaemonInfo
